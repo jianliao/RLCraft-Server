@@ -1,4 +1,4 @@
-FROM alpine:3.12 AS base
+FROM alpine:latest AS base
 LABEL stage=builder
 RUN apk add curl
 COPY start.sh /
