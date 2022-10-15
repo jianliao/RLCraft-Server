@@ -27,4 +27,5 @@ USER forge
 USER forge
 WORKDIR /server
 EXPOSE 25565
+EXPOSE 25575
 ENTRYPOINT /run-server.sh
