@@ -1,4 +1,5 @@
 FROM alpine:3.12 AS base
+LABEL stage=builder
 RUN apk add curl
 COPY start.sh /
 RUN mkdir server \
@@ -6,17 +7,14 @@ RUN mkdir server \
 WORKDIR /server
 RUN /start.sh
 
-
-
 FROM openjdk:8-jre-slim AS server-install
+LABEL stage=builder
 COPY --from=base /server /server/
 WORKDIR /server
 COPY server.properties /server/
 RUN java -jar installer.jar --installServer \
     && rm -rf installer* \
     && ln -s forge-*.jar server.jar
-
-
 
 FROM openjdk:8-jre-slim
 COPY run-server.sh /

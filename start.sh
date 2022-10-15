@@ -8,8 +8,11 @@ FORGE_URL=https://files.minecraftforge.net/maven/net/minecraftforge/forge/${MINE
 wget "$FORGE_URL" -O installer.jar
 
 echo "Downloading RLCraft..."
-#RLCRAFT_URL=$(curl https://mediafilez.forgecdn.net/files/3655/676/RLCraft+Server+Pack+1.12.2+-+Release+v2.9.1c.zip)
-#wget "$RLCRAFT_URL" -O rlcraft.zip
-wget https://mediafilez.forgecdn.net/files/3655/676/RLCraft+Server+Pack+1.12.2+-+Release+v2.9.1c.zip -O rlcraft.zip
+RLCRAFT_URL=https://mediafilez.forgecdn.net/files/3655/676/RLCraft+Server+Pack+1.12.2+-+Release+v2.9.1c.zip
+wget "$RLCRAFT_URL" -O rlcraft.zip
+
+echo "Unzip RLCraft..."
 unzip -q rlcraft.zip
+
+echo "Remove the downloaded zip file..."
 rm -rf rlcraft.zip

@@ -9,13 +9,13 @@ Docker image for the Forge modded server with RLCraft installed.
 Minimum starting command for online use:
 
 ```shell
-docker run -dit -e EULA=true -p 25565:25565 doubleem/rlcraft-server
+docker run -dit -e EULA=true -p 25565:25565 rlcraft-server:latest
 ```
 
 For saving and loading worlds and configurations attach a volume to the /server/server-data path, like so:
 
 ```shell
-docker run -dit -e EULA=true -v rlcraft-server:/server/server-data -p 25565:25565 doubleem/rlcraft-server
+docker run -dit -e EULA=true -v rlcraft-server:/server/server-data -p 25565:25565 rlcraft-server:latest
 ```
 
 **NOTE**: By providing EULA=TRUE you agree to the EULA at [https://account.mojang.com/documents/minecraft_eula](https://account.mojang.com/documents/minecraft_eula).
