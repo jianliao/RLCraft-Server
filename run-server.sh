@@ -37,6 +37,7 @@ java -Xms${RAM:-$DEFAULT_RAM} -Xmx${RAM:-$DEFAULT_RAM} \
      -XX:SurvivorRatio=32 \
      -XX:+PerfDisableSharedMem \
      -XX:MaxTenuringThreshold=1 \
+     -Djava.util.Arrays.useLegacyMergeSort=true \
      -jar server.jar nogui
 
 if [ -d "world" ] && [ -d "server-data" ]; then
