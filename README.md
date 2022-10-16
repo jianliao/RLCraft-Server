@@ -1,4 +1,4 @@
-# RLCraft Server
+# RLCraft Server with Rcon enabled
 
 ![RLCraft Server Publish](https://github.com/double-em/RLCraft-Server/workflows/RLCraft%20Server%20Publish/badge.svg)
 
@@ -9,13 +9,13 @@ Docker image for the Forge modded server with RLCraft installed.
 Minimum starting command for online use:
 
 ```shell
-docker run -dit -e EULA=true -p 25565:25565 rlcraft-server:latest
+docker run -dit -e EULA=true -p 25565:25565 -p 25575:25575 rlcraft-server:latest
 ```
 
 For saving and loading worlds and configurations attach a volume to the /server/server-data path, like so:
 
 ```shell
-docker run -dit -e EULA=true -v rlcraft-server:/server/server-data -p 25565:25565 rlcraft-server:latest
+docker run -dit -e EULA=true -v rlcraft-server:/server/server-data -p 25565:25565 -p 25575:25575 rlcraft-server:latest
 ```
 
 **NOTE**: By providing EULA=TRUE you agree to the EULA at [https://account.mojang.com/documents/minecraft_eula](https://account.mojang.com/documents/minecraft_eula).
@@ -25,7 +25,7 @@ docker run -dit -e EULA=true -v rlcraft-server:/server/server-data -p 25565:2556
 - EULA (Required)
   - Default: none
 - RAM - Sets the dedicated RAM (java -Xms, -Xmx)
-  - Default: 6G
+  - Default: 8G
 
 ## References
 
